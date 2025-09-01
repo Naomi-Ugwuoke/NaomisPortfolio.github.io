@@ -1,53 +1,3 @@
-<!-- 
-    <html>
-        <head>
-            <title>Naomi's Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
-        <body style="background-color: #faf9f6;">
-
-            My name at the top of the page
-            <div>
-                <img id="header_name" src="art/name-header.svg" alt="Naomi Ugwuoke" > 
-            </div>
-
-            Define the plus sign svg symbol
-            <div class="grid-container">
-                <div class="row">
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                    <div class="grid-item">
-                        <img src="art/plus_sign.svg" class="plus_sign_bullets">
-                    </div>
-                    
-                </div>
-            </div>
-
-            My picture at the bottom left
-            <div>
-                <img id="my_face" src="art/my_face.png" alt="Naomi's face">
-            </div>
-
-
-        </body>
-    </html> 
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,20 +12,22 @@
   </head>
 
   <body>
-    <!-- Music Toggle -->
-    <div class="music-toggle">
-      <button id="musicBtn">🎵 Play Music</button>
-      <audio id="bgMusic" autoplay loop>
-        <source src="files/lofi_music.mp3" type="audio/mpeg" />
-      </audio>
-    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#intro" class="nav-link active">Intro</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-    <!-- Background Illustrations -->
-    <div class="background">
-      <div class="cloud cloud1"></div>
-      <div class="cloud cloud2"></div>
-      <div class="hills"></div>
-    </div>
+      <!-- Music Toggle -->
+      <div class="music-toggle">
+        <button id="musicBtn">🎵 Play Music</button>
+        <audio id="bgMusic" autoplay loop>
+          <source src="files/lofi_music.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </nav>
 
     <!-- Falling leaves -->
     <div class="falling-leaves">
@@ -88,16 +40,6 @@
 
     <!-- Layout Container -->
     <div class="layout">
-      <!-- Fixed Sidebar -->
-      <nav class="sidebar">
-        <ul>
-          <li><a href="#intro" class="nav-link active">Intro</a></li>
-          <li><a href="#about" class="nav-link">About Me</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
       <!-- Main Content -->
       <main class="content">
         <section id="intro" class="page intro">
@@ -119,7 +61,7 @@
         </section>
 
         <section id="about" class="page about" width="">
-          <h2>Chapter 1: About Me</h2>
+          <h2>About Me</h2>
           <div class="about-me-text">
             <p>
               I am a curious analyst based in Canada with a background in
@@ -142,113 +84,31 @@
           </div>
         </section>
 
-        <section id="projects" class="page projects">
-          <h2>Chapter 2: My Projects</h2>
-          <div class="project-grid">
-            <div class="project-card">🌿 Calm UI Design</div>
-            <div class="project-card">🧵 Cozy App Concept</div>
-            <div class="project-card">🌸 Ghibli Tribute Site</div>
-          </div>
-        </section>
-
         <section id="contact" class="page contact">
-          <h2>To Be Continued... Let’s Connect</h2>
+          <h2>Let’s Connect</h2>
           <p>
             ✨ Email:
             <a href="mailto:Naomi.Ugw@gmail.com">Naomi.Ugw@gmail.com</a>
             <br />
             📞 Phone: 778-791-4248
             <br />
-            <a href="files/NaomiResume.pdf">Naomi's Resume</a>
+            <br />
+            <a id="greenBtn" href="files/NaomiResume.pdf" target="_blank">
+              Naomi's Resume
+            </a>
           </p>
         </section>
 
-        <footer>
+        <!-- <footer>
           <p>
             Let's connect ✉️
             <a href="mailto:Naomi.Ugw@gmail.com">Naomi.Ugw@gmail.com</a>
           </p>
-        </footer>
+        </footer> -->
       </main>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-      // Music toggle
-      const musicBtn = document.getElementById("musicBtn");
-      const bgMusic = document.getElementById("bgMusic");
-      let isPlaying = false;
-
-      musicBtn.addEventListener("click", () => {
-        if (!isPlaying) {
-          bgMusic.play();
-          musicBtn.textContent = "🔇 Pause Music";
-        } else {
-          bgMusic.pause();
-          musicBtn.textContent = "🎵 Play Music";
-        }
-        isPlaying = !isPlaying;
-      });
-
-      // Try autoplay on load
-      window.addEventListener("load", () => {
-        bgMusic
-          .play()
-          .then(() => {
-            isPlaying = true;
-            musicBtn.textContent = "🔇 Pause Music";
-          })
-          .catch(() => {
-            // Autoplay blocked – wait for user interaction
-            const tryPlay = () => {
-              bgMusic.play().then(() => {
-                isPlaying = true;
-                musicBtn.textContent = "🔇 Pause Music";
-              });
-              document.body.removeEventListener("click", tryPlay);
-            };
-
-            document.body.addEventListener("click", tryPlay);
-          });
-      });
-
-      // Section scroll reveal
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-
-      document.querySelectorAll(".page").forEach((section) => {
-        observer.observe(section);
-      });
-
-      // Scroll spy
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
 
@@ -256,11 +116,15 @@
 🌿 Ghibli-Inspired Calm & Cutesy Color Palette
 Purpose	Color	         Hex Code	            Notes
 Background (paper)      🍶 Cream	            #fefcf5	Soft and warm, like sunlit paper
-Primary Accent          🌿 Moss Green	        #6b8e6d	Earthy, calm, and grounding
+Primary Accent          🌿 Moss Green	        #6b8e6d	Earthy, calm, and grounding, dark green #4e6b50
 Secondary Accent        🍡 Sakura Pink	        #f9d5d3	Sweet and gentle, adds charm
 Highlight               🌼 Dandelion Yellow	    #f5e8a8	Playful and sunny
 Shadow / Text.      	☁️ Cloud Gray	        #666666	Soft contrast for readability
 Sky Blue	            ☁️ Pale Sky	            #cce7f0	Optional—adds a dreamy sky-like calm
+gray #
+Smoky Olive Gray – #5A5F55
+
+
 
 🎨 Preview
 Here’s how it might feel together:
