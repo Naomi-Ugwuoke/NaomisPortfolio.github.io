@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Naomi's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link active">Projects</a></li>
+      </ul>
+
+      <!-- Music Toggle -->
+      <div class="music-toggle">
+        <button id="musicBtn">🎵 Play Music</button>
+        <audio id="bgMusic" autoplay loop>
+          <source src="files/lofi_music.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </nav>
+
+    <!-- Falling leaves -->
+    <div class="falling-leaves">
+      <img src="art/leaf1.svg" class="leaf" style="--i: 0" />
+      <img src="art/leaf2.svg" class="leaf" style="--i: 1" />
+      <img src="art/leaf1.svg" class="leaf" style="--i: 2" />
+      <img src="art/leaf2.svg" class="leaf" style="--i: 3" />
+      <img src="art/leaf1.svg" class="leaf" style="--i: 4" />
+    </div>
+
+    <div class="layout">
+      <!-- Main Content -->
+      <main class="content">
+        <section id="projects">
+          <header id="projects-header">
+            <h1>My Projects 🌸</h1>
+          </header>
+        </section>
+
+        <div class="project-card">
+          <h2>2020-2021 COVID-19 Data Exploration</h2>
+          <p>
+            <strong>Tools & Skills:</strong> MySQL, Excel, ETL Concepts, Data
+            Cleaning, Data Analysis
+          </p>
+          <p>
+            Explored 2020-2021 COVID-19 case, death, and vaccination data to
+            uncover trends and insights. Built SQL queries and cleaned data to
+            tell the story behind the numbers.
+          </p>
+
+          <div class="project-images">
+            <img
+              src="portfolio_ss/Covid_data_expl_sample.png"
+              alt="COVID Dashboard Screenshot"
+            />
+            <img
+              src="portfolio_ss/covid_data_expl_sql.png"
+              alt="SQL Query Screenshot"
+            />
+          </div>
+
+          <h4>Key Insights</h4>
+          <ul>
+            <li>
+              Canada’s peak death rate reached 1.97% of total cases, compared to
+              a global average of 2.11%.
+            </li>
+            <li>
+              Andorra had the highest infection rate relative to its population
+              (17.13% relative to a population of 77,265).
+            </li>
+            <li>
+              Vaccination rollout correlated with declining death percentages
+              globally.
+            </li>
+          </ul>
+
+          <p>
+            <a
+              href="https://github.com/Naomi-Ugwuoke/DataPortfolioProjects/tree/main/DataExploration_Covid "
+              target="_blank"
+              >View Full Project on GitHub</a
+            >
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h2>COVID-19 Data Visualization</h2>
+          <p>
+            <strong>Tools & Skills:</strong> MySQL, Excel, Tableau, Data
+            Analysis, Data Visualization
+          </p>
+          <p>
+            Visualized the cleaned 2020-2021 COVID-19 death and vaccination data
+            to uncover trends and insights. Created dashboards to visualize
+            patterns and tell the story behind the numbers.
+          </p>
+
+          <div class="project-images">
+            <img
+              src="portfolio_ss/covid_visualization_tableau.png"
+              alt="COVID Dashboard Screenshot"
+            />
+            <img
+              src="portfolio_ss/covid_visualization_data.png"
+              alt="SQL Query Screenshot"
+            />
+          </div>
+
+          <p>
+            <a
+              href="https://public.tableau.com/shared/3XXDZXFJ3?:display_count=n&:origin=viz_share_link"
+              >View Dashboard on Tableau</a
+            >
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/Naomi-Ugwuoke/DataPortfolioProjects/tree/main/DataVisualization_Covid"
+              target="_blank"
+              >View Full Project on GitHub</a
+            >
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h2>Nashville Housing Data Cleaning</h2>
+          <p>
+            <strong>Tools & Skills:</strong> MySQL, Data Cleaning, Data
+            Transformation, Data Integrity, ETL Concepts
+          </p>
+          <p>
+            Cleaned and prepared raw Nashville housing data for analysis.
+            Standardized date formats, populated missing addresses, split
+            compound address fields, standardized categorical values, removed
+            duplicates, and dropped unnecessary columns.
+          </p>
+
+          <div class="project-images">
+            <img
+              src="portfolio_ss/nashville_cleaning_sql.png"
+              alt="SQL Query Screenshot"
+            />
+            <img
+              src="portfolio_ss/cleaned_nashville_data.png"
+              alt="Cleaned Dataset Screenshot"
+            />
+          </div>
+
+          <h4>Key Outcomes</h4>
+          <ul>
+            <li>
+              Standardized all dates to SQL date format (YYYY-MM-DD) for
+              consistency.
+            </li>
+            <li>
+              Populated missing property addresses using parcel IDs, improving
+              dataset completeness.
+            </li>
+            <li>
+              Split property and owner addresses into separate columns for
+              better usability.
+            </li>
+            <li>
+              Removed duplicates and unnecessary columns, creating a clean
+              dataset ready for analysis.
+            </li>
+          </ul>
+
+          <p>
+            <a
+              href="https://github.com/Naomi-Ugwuoke/DataPortfolioProjects/tree/main/DataCleanup_Nashville"
+              target="_blank"
+              >View Full Project on GitHub</a
+            >
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Naomi</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
